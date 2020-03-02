@@ -97,7 +97,8 @@ class Dog
     
     if !result.empty?
       #db_return = result[0]
-      dog = Dog.new(id: db_return[0], name: db_return[1], breed: db_return[2])
+      # dog = Dog.new(id: db_return[0], name: db_return[1], breed: db_return[2])
+      dog = Dog.new(result)
     else 
       dog = Dog.create(name: name, breed: breed)
     end
