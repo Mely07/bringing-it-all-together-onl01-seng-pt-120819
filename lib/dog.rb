@@ -95,13 +95,13 @@ class Dog
     result = DB[:conn].execute(sql, name, breed)
     DB[:conn].results_as_hash
     
-    # if !result.empty?
-    #   db_return = result[0]
-    #   dog = Dog.new(id: db_return[0], name: db_return[1], breed: db_return[2])
-    # else 
-    #   dog = Dog.create(name: name, breed: breed)
-    # end
-    #   dog
+    if !result.empty?
+      db_return = result[0]
+      dog = Dog.new(id: db_return[0], name: db_return[1], breed: db_return[2])
+    else 
+      dog = Dog.create(name: name, breed: breed)
+    end
+      dog
   end
 
 end
