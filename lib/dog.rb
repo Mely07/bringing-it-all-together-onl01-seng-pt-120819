@@ -92,9 +92,8 @@ class Dog
       LIMIT 1
     SQL
     
-    DB[:conn].results_as_hash = true
     result = DB[:conn].execute(sql, name, breed)
-    
+    DB[:conn].results_as_hash = true
     
     # if !result.empty?
     #   db_return = result[0]
