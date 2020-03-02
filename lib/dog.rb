@@ -93,7 +93,7 @@ class Dog
     SQL
     
     result = DB[:conn].execute(sql, name, breed)
-    DB[:conn].results_as_hash = true
+    DB[:conn].results_as_hash
     
     # if !result.empty?
     #   db_return = result[0]
