@@ -92,15 +92,14 @@ class Dog
       LIMIT 1
     SQL
     
-    DB[:conn].results_as_hash = true
+    #DB[:conn].results_as_hash = true
     result = DB[:conn].execute(sql, name, breed)
     
     if !result.empty?
-      #db_return = result[0]
-      # dog = Dog.new(id: db_return[0], name: db_return[1], breed: db_return[2])
-      dog = Dog.new(result)
+      db_return = result[0]
+      dog = Dog.new(id: db_return[0], name: db_return[1], breed: db_return[2])
     else 
-      dog = Dog.create(result)
+      dog = Dog.create(name: name, breed: breed)
     end
       dog
   end
